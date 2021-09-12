@@ -1,0 +1,162 @@
+﻿<Window x:Class="AssignmentFive.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AssignmentFive"
+        mc:Ignorable="d"
+         Title="MainWindow" Height="550" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    
+    <Grid Height="520" VerticalAlignment="Bottom">
+
+        <Grid.Resources>
+            <local:ConvertDataGrid x:Key="MyConverter"/>
+
+            <Style TargetType="Label">
+                <Setter Property="Width" Value="150"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Grid.Row" Value="0"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Text" Value=""/>
+                <Setter Property="Width" Value="200"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="Width" Value="200"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+            </Style>
+            <Style TargetType="RadioButton">
+                <Setter Property="Width" Value="200"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Grid.Row" Value="0"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="370"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+            </Style>
+            <Style TargetType="DataGrid">
+                <Setter Property="Width" Value="700"/>
+                <Setter Property="Height" Value="410"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+            </Style>
+        </Grid.Resources>
+        <!--NAME-->
+        <Label Content="NAME :"  Margin="10,30,0,0"/>
+        <TextBox x:Name="tbCustName"  Margin="180,30,0,0" TextChanged="NameTextBox"
+                 ToolTip="{Binding ElementName=tbCustName, Path=(Validation.Errors)/ErrorContent}">
+            <TextBox.Text>
+                <Binding Path="Shedule.Name">
+                    <Binding.ValidationRules>
+                        <local:NameValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label x:Name="lNameErr" Content=""  Margin="180,60,0,0" FontSize="12" Foreground="Red" Width="200"/>
+
+        <!--APPOINTMENT-->
+        <Label Content="APPOINTMENT :" Margin="10,90,0,0"/>
+        <ComboBox x:Name="cbAppointment" Margin="180,90,0,0" />
+
+        <!--PROPERTY TYPE-->
+        <Label Content="Property Type :" Margin="10,150,0,0"/>
+        <ComboBox x:Name="cbPropertyType" Margin="180,150,0,0" />
+
+        <!--SIZE OF Land-->
+        <Label Content="Size Of Land :"  Margin="10,210,0,0"/>
+        <TextBox x:Name="tbSizeOfLand"  Margin="180,210,0,0" TextChanged="SizeOfLandTextBox"
+                 ToolTip="{Binding ElementName=tbSizeOfLand, Path=(Validation.Errors)/ErrorContent}">
+            <TextBox.Text>
+                <Binding Path="Shedule.Land">
+                    <Binding.ValidationRules>
+                        <local:LandValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label x:Name="lLandSize" Content=""  Margin="180,240,0,0" FontSize="12" Foreground="Red"/>
+
+        <!--SIZE OF Work-->
+        <Label Content="Size Of Work :"  Margin="10,270,0,0"/>
+        <TextBox x:Name="tbSizeOfWork"  Margin="180,270,0,0" TextChanged="SizeOfWorkTextBox"
+                 ToolTip="{Binding ElementName=tbSizeOfWork, Path=(Validation.Errors)/ErrorContent}">
+            <TextBox.Text>
+                <Binding Path="Shedule.WorkArea">
+                    <Binding.ValidationRules>
+                        <local:LandValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label x:Name="lWorkSize" Content=""  Margin="180,300,0,0" FontSize="12" Foreground="Red"/>
+
+        <!--SIZE OF CREDIT CARD-->
+        <Label Content="Credit Card :"  Margin="10,330,0,0"/>
+        <Label Content="Format : 0000 0000 0000 0000"  Margin="10,360,0,0" FontSize="10"/>
+        <TextBox x:Name="tbCreditCard"  Margin="180,330,0,0" TextChanged="CreditCardTextBox"
+                 ToolTip="{Binding ElementName=tbCreditCard, Path=(Validation.Errors)/ErrorContent}">
+            <TextBox.Text>
+                <Binding Path="Shedule.CreditCard">
+                    <Binding.ValidationRules>
+                        <local:CreditCardValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label x:Name="lCreditCard" Content=""  Margin="180,360,0,0" Width="200" FontSize="12" Foreground="Red"/>
+
+        <!--ADDITIONAL INFO-->
+        <Label Content="AREA CLEARED :" Margin="10,390,0,0"/>
+        <RadioButton x:Name="yes" Content="Yes" IsChecked="True"  Margin="180,400,0,0" Checked="AdditionalInfoRadio"/>
+        <RadioButton x:Name="no" Content="No"  Margin="180,420,0,0" Checked="AdditionalInfoRadio"/>
+
+        <!--BOOK APPOINTMENT-->
+        <Button x:Name="bScheduleAppointment" Content="Book Appointment" Width="180" Margin="220,450,0,0" Click="OnClickBookAppointment"/>
+        <Label x:Name="lBookApp" Content=""  Margin="220,480,0,0" Width="300" FontSize="12" />
+
+        <!--SAVE APPOINTMENT-->
+        <Button x:Name="bSaveToXml" Content="Save Appointment" Width="180" Margin="10,450,0,0" Click="OnClickSaveAppointment"/>
+        <Label x:Name="lSaveApp" Content=""  Margin="10,480,0,0" Width="180" FontSize="12" />
+
+
+        <!--DISPLAY SCHEDULE-->
+        <Button x:Name="bDisplaySchedule" Content="Display Schedule" Margin="450,30.6,0,0" Width="150" Click="OnClickDisplayList" />
+
+        <!--SEARCH BUTTON-->
+        <Button x:Name="bSearch" Content="Search By Name" Margin="650,30.6,0,0" Width="100" Click="OnClickSearch" />
+        <TextBox x:Name="tbSearch"  Margin="760,30.6,0,0" TextChanged="CreditCardTextBox"/>
+
+        <!--DATA GRID-->
+        <DataGrid x:Name="dgAppointmentList" AutoGenerateColumns="false" CanUserAddRows="False" Margin="450,70,0,0" ItemsSource="{Binding Path= SheduleList}">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <!--<Setter Property="Background" Value="{Binding Path=., Converter={StaticResource ConvertDataGrid}}" />-->
+                    <Setter Property="Background" Value="{Binding Path=., Converter={StaticResource MyConverter}}"/>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Appointment" Width="2*" Binding="{Binding Time}"/>
+                <DataGridTextColumn Header="Name" Width="2*" Binding="{Binding Name}"/>
+                <!--<DataGridTextColumn Header="Property Type" Width="2*" Binding="{Binding Land}"/>-->
+                <DataGridTextColumn Header="Size of Land" Width="2*" Binding="{Binding Land}"/>
+                <DataGridTextColumn Header="Size of Work" Width="2*" Binding="{Binding WorkArea}"/>
+                <DataGridTextColumn Header="Credit Card" Width="3*" Binding="{Binding CreditCard}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

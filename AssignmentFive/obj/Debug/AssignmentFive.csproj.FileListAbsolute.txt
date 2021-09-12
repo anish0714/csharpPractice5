@@ -1,0 +1,16 @@
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\AssignmentFive.csprojAssemblyReference.cache
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\MainWindow.g.cs
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\App.g.cs
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\AssignmentFive_MarkupCompile.cache
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\AssignmentFive_MarkupCompile.lref
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\bin\Debug\AssignmentFive.exe.config
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\bin\Debug\AssignmentFive.exe
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\bin\Debug\AssignmentFive.pdb
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\MainWindow.baml
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\AssignmentFive.g.resources
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\AssignmentFive.Properties.Resources.resources
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\AssignmentFive.csproj.GenerateResource.cache
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\AssignmentFive.csproj.CoreCompileInputs.cache
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\AssignmentFive.exe
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\AssignmentFive.pdb
+C:\Users\irock\source\repos\AssignmentFive\AssignmentFive\obj\Debug\GeneratedInternalTypeHelper.g.cs
